@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewData["Title"] = "Showtable";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model SortedDictionary<string,List<ResisterUser>>
+@{
+    ViewData["Title"] = "ViewAllData";
+    int count = 1;
+}
+
+<h1 align ="center"> ViewAllData </h1>
+
+@foreach (KeyValuePair<string, List<ResisterUser>> list in Model)
+{
+    <b> CityName :- @list.Key</b>
+    <table>
+       <tr>
+       <th>Sr.No &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>        
+       <th>FullName &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </th>
+       <th>Gender &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+       <th>EmailId &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+       <th>PhoneNo </th>
+       </tr>
+       <br/>
+    @foreach (ResisterUser user in list.Value)
+    {
+       <tr>
+          <td>@count</td>
+          <td>@user.FullName</td>
+          <td>@user.Gender</td>
+          <td>@user.EmailId</td>
+          <td>@user.PhoneNo</td>
+       </tr>
+          count++;
+    }
+    </table>
+    <hr />
+    count=1;
+}
+

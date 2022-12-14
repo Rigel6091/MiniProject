@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<html>
+    <body style="background-color:aliceblue;">
+        <h1 align="Center">Login Page</h1>
+
+        <div  style="border:2px  white;">
+            <form  asp-controller="ResisterUser" asp-action="Login">
+               <div>
+                <label class="form-label" >LoginName</label>
+                <input type="text" id="LoginName" name="LoginName" class="form-control" required/>   
+               </div>
+               <div>
+                <label class="form-label" >Password</label>
+                <input type="password" id="Passowrd" name="Password"  class="form-control" required />       
+               </div>
+               <br />
+               <div>
+                 <label class="form-label" >Remember Me</label>
+                 <input type="checkbox" id="RememberMe" name="RememberMe" />
+               </div>
+               <br />
+               <div align="center"><p style="color:red">@ViewBag.Error</p></div>          
+               <br />
+               <div align ="center">
+                 <input type="Submit" class="btn btn-primary btn-block mb-4" value="Login">
+               </div>
+
+               <div>
+                 Create new Account <a asp-action="Create">Register Here</a>
+               </div>
+
+            </form>
+        </div>
+    </body>
+</html>
+

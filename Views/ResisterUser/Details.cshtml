@@ -1,0 +1,24 @@
+﻿@model MiniProject.Models.ResisterUser
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>ResisterUser</h4>
+    <hr />
+    <div class="form-group">
+                <label asp-for="CityId" class="control-label"></label>
+                  @*<input asp-for="CityId" class="form-control" required />*@
+                  @Html.DropDownListFor(m => m.CityId, Model.drdncity)<br>
+                <span asp-validation-for="CityId" class="text-danger"></span>
+     </div>
+     <hr />
+</div>
+<div>
+    @*@Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |*@
+    @*<a asp-action="Login">Back to List</a>*@
+</div>

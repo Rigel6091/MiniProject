@@ -1,0 +1,12 @@
+﻿
+@{
+    ViewData["Title"] = "Welcome";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using(Html.BeginForm()){
+        <h1 align="Center">Welcome, @ViewBag.fullName</h1>
+        <a style="margin-left:48%" asp-action="Logout" class="btn btn-primary btn-block mb-4" >Logout</a>
+        <br />
+        <a style="margin-left:46.5%" asp-action="Update" value="Update"  > Update Profile</a>
+        @*@Html.ActionLink("Update", "Update")*@
+}

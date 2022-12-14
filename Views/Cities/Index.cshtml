@@ -1,0 +1,42 @@
+﻿@model IEnumerable<MiniProject.Models.cities>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LayoutMy.cshtml";
+}
+<p align ="center">
+    <a asp-action="Create">Create New</a>
+</p>
+
+<h2>
+<table class="table" align ="center">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CityId)
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CityName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                        @Html.DisplayFor(modelItem => item.CityId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CityName)
+            </td>
+            <td>
+                        @Html.ActionLink("Edit", "Edit", new { cityid=item.CityId  }) |
+                        @Html.ActionLink("Details", "Details", new { cityid=item.CityId }) |
+                        @Html.ActionLink("Delete", "Delete", new { cityid=item.CityId })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</h2>
